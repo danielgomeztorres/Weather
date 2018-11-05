@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Weather</title>
+	<link rel="stylesheet" type="text/css" href="Weather.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+</head>
+
+<body>
+
+	<div id="app">
+		<header>
+			<div>
+				<h1 class="topHeader">WEATHER</h1>
+			</div>
+			<div class="topHeader" class="input-group">
+				<input class="inputText" type="text" v-model="search" placeholder="Search City..." /><button>Accept</button>
+			</div>
+		</header>
+
+
+
+		<div  class="col-lg-3 col-md-4 col-sm-6 col-xs-12" >
+			<div class="tile">
+				<div class="wrapper">
+					<div>
+						<div class="header">
+						
+
+
+							<p>{{city.name}}</p>
+							<p>{{city.weather[0].main}}</p>
+							<p>{{city.weather[0].description}}</p>
+							<p>{{city.weather[0].icon}}</p>
+							<p></p>
+
+
+
+						</div>
+
+
+						<div class="dates">
+							<div class="start">
+								<strong>HUMIDITY</strong>
+								<span></span>
+							</div>
+							<div class="ends">
+								<strong>WIND</strong> 
+							</div>
+						</div>
+					</div>
+
+					<!--					<button v-on:click="masinfo(myDIV)">Click Me</button>-->
+
+<!--					<button data-toggle="collapse" data-target="#demo">Collapsible</button>-->
+
+<!--					<div id="demo" class="collapse">-->
+						<div class="footer">
+							<div class="stats">
+								<div>
+									<strong></strong>
+								</div>
+
+
+								<div>
+									<strong></strong>
+								</div>
+
+								<div>
+									<strong></strong> 
+								</div>
+
+
+
+
+
+							</div>
+
+<!--						</div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+	</div>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="Weather.js"></script>
+</body>
+
+</html>
