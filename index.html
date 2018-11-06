@@ -7,7 +7,10 @@
 	<link rel="stylesheet" type="text/css" href="Weather.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<!--	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
+	<link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Sigmar+One" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fascinate+Inline|Jacques+Francois+Shadow|Montserrat+Subrayada" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
 
 </head>
 
@@ -15,73 +18,35 @@
 
 	<div id="app">
 		<header>
-			<div>
-				<h1 class="topHeader">WEATHER</h1>
-			</div>
-			<div class="topHeader" class="input-group">
-				<input class="inputText" type="text" v-model="search" placeholder="Search City..." /><button>Accept</button>
-			</div>
+			
+				<div class="flexboxLogo">
+					<h1 class="titulo">WEATHER AROUND THE WORLD</h1>
+				</div>
+			
+			<label class="topHeader" class="input-group">
+				<p class="FindYou">Find your city :</p>
+				<input v-on:keyup.enter="fetchStart(getCity())" type="text" v-model="city" placeholder="Search City..." /><button  v-on:click="fetchStart(getCity())"  class="btn btn-primary">Search City</button>
+			</label>
 		</header>
 
 
 
-		<div  class="col-lg-3 col-md-4 col-sm-6 col-xs-12" >
-			<div class="tile">
-				<div class="wrapper">
-					<div>
-						<div class="header">
-						
+		<div class="card" class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div>
+				<div>
+					<div class="cardTime">
+						<div class="headers">
 
-
-							<p>{{city.name}}</p>
-							<p>{{city.weather[0].main}}</p>
-							<p>{{city.weather[0].description}}</p>
-							<p>{{city.weather[0].icon}}</p>
-							<p></p>
-
-
+							<h1 class="cityName">{{dataCity.name}} <span class="country">({{dataCity.sys.country}})</span><img v-bind:src="getIcon()"> | {{dataCity.main.temp}} Cº</h1>
+							<p><strong>Temperatura MAX:</strong>{{dataCity.main.temp_max}} Cº <img src="Iconos/kisspng-human-body-temperature-thermometer-clip-art-temperature-png-transparent-images-5aae92c0ad6a80.png" alt=""> </p>
+							<p><strong>Temperatura MIN:</strong> {{dataCity.main.temp_min}} Cº <img src="Iconos/kisspng-thermometer-temperature-weather-meteorology-tropos-temperature-5adb3b13b84140.png" alt=""></p>
+							<p><strong>Weather:</strong> {{dataCity.weather[0].main}}</p>
+							<p><strong>Description:</strong> {{dataCity.weather[0].description}}</p>
+							<p><strong>Wind:</strong> {{dataCity.wind.speed}} m/s <img src="Iconos/kisspng-line-angle-5b0816ac5460f5.png" alt=""></p>
+							<p><strong>Humidity:</strong> {{dataCity.main.humidity}} %</p>
+							<p><strong>Pressure:</strong> {{dataCity.main.pressure}} hPa <img src="Iconos/kisspng-computer-icons-pressure-measurement-gauge-manomete-blood-pressure-5ac115ed843480.png" alt=""></p>
 
 						</div>
-
-
-						<div class="dates">
-							<div class="start">
-								<strong>HUMIDITY</strong>
-								<span></span>
-							</div>
-							<div class="ends">
-								<strong>WIND</strong> 
-							</div>
-						</div>
-					</div>
-
-					<!--					<button v-on:click="masinfo(myDIV)">Click Me</button>-->
-
-<!--					<button data-toggle="collapse" data-target="#demo">Collapsible</button>-->
-
-<!--					<div id="demo" class="collapse">-->
-						<div class="footer">
-							<div class="stats">
-								<div>
-									<strong></strong>
-								</div>
-
-
-								<div>
-									<strong></strong>
-								</div>
-
-								<div>
-									<strong></strong> 
-								</div>
-
-
-
-
-
-							</div>
-
-<!--						</div>-->
 					</div>
 				</div>
 			</div>

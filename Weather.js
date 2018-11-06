@@ -3,14 +3,21 @@ var app = new Vue({
 
 
 	data: {
-		
-		city: 'roma',
-		search: ''
+
+		city: 'Paris',
+		dataCity: null,
+		icon: ''
+
+
 	},
 	methods: {
 		getCity: function () {
 			return "http://api.openweathermap.org/data/2.5/weather?q=" + this.city + "&units=metric&APPID=07581da1e389d480d227750c8972b935"
 		},
+		getIcon: function () {
+			return "http://openweathermap.org/img/w/" + this.icon + ".png"
+		},
+
 
 		fetchStart: function (url) {
 
@@ -19,11 +26,12 @@ var app = new Vue({
 					return data.json();
 				}).then(function (myData) {
 					console.log(myData);
-					app.city = myData;
-
+					app.dataCity = myData;
+					app.icon = myData.weather[0].icon;
 
 				})
-		}
+
+		},
 
 	},
 
@@ -31,13 +39,6 @@ var app = new Vue({
 	created: function () {
 		this.fetchStart(this.getCity());
 		console.log("created");
-	},
-	computed: {
-		SearchCity: function () {
-			var arrayFilter = this.city.filter(theWeather => {
-				return theWeather.name.toLowerCase().includes(this.search.toLowerCase())
-			});
-			return arrayFilter
-		}
 	}
+
 })
