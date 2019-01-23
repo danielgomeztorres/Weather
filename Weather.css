@@ -10,13 +10,15 @@ body {
 	display: flex;
 	justify-content: center;
 }
+
 .cityName {
-font-family: 'Montserrat Subrayada', sans-serif;
+	font-family: 'Montserrat Subrayada', sans-serif;
 
 }
+
 .titulo {
-font-family: 'Righteous', cursive;
-text-shadow:
+	font-family: 'Righteous', cursive;
+	text-shadow:
 		-1px -1px 0 black,
 		1px -1px 0 black,
 		-1px 1px 0 black,
@@ -27,17 +29,20 @@ text-shadow:
 	padding: 40px;
 	color: white;
 	text-decoration: underline;
-  	background-image: url(logoweather1.png);
-background-size: contain;
+	background-image: url(logoweather1.png);
+	background-size: contain;
 	background-repeat: no-repeat;
 
 }
+
 .FindYou {
 	color: white;
 }
+
 .country {
 	font-size: 20px;
 }
+
 .cardTime {
 	border-radius: 25px;
 }
@@ -53,7 +58,7 @@ background-size: contain;
 
 
 .headers {
-	
+
 	padding: 19px 0;
 	text-align: center;
 	color: white;
@@ -76,10 +81,3 @@ background-size: contain;
 
 
 
-.rain {}
-
-.sun {}
-
-.snow {}
-
-.nubes {}

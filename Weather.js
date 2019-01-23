@@ -30,11 +30,9 @@ var app = new Vue({
 					app.icon = myData.weather[0].icon;
 
 				})
-
 		},
 
 	},
-
 
 	created: function () {
 		this.fetchStart(this.getCity());
